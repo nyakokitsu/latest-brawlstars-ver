@@ -10,7 +10,7 @@ def get_latest_client() -> Client:
         return client_latest
 
 def main():
-    dir_path = pathlib.Path(__file__).parent.parent.parent
+    dir_path = pathlib.Path(__file__).parent
     for root, dirs, files in os.walk(dir_path):
         for file in files:
             if file.endswith(".json"):
