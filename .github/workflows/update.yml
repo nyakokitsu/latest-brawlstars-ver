@@ -1,8 +1,7 @@
 name: Update
 
 on:
-  push:
-   branches: [ "main" ]
+  workflow_dispatch:
   schedule:
     - cron: "30 11 * * *" 
 
