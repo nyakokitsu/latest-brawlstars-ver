@@ -12,6 +12,7 @@ from enum import Enum
 class HelloServerResponse(Enum):
     Success = 7
     NeedUpdate = 8
+    Maintenance = 10
 
 
 class Client:
@@ -179,6 +180,7 @@ class Client:
                 self.fingerprint = json.loads(serialized_fingerprint)
 
                 self.assets_url = server_data_stream.readString()
+                print(f"Updated assets: {self.assets_url}")
                 self.assets_url_2 = server_data_stream.readString()
         elif address=="game.clashroyaleapp.com":
             if status_code==8:
