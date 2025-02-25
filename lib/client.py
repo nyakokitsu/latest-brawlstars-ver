@@ -110,6 +110,9 @@ class Client:
         else:
             status_code = server_data_stream.readUInt32()
 
+        if status_code == 10:
+            print("Game under maintenance, skipping")
+            exit()
         if status_code == 7:
             if address=="game.clashroyaleapp.com":
                 server_data_stream.readString()
